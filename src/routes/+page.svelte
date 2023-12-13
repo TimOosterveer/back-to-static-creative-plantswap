@@ -11,7 +11,7 @@
 	
 </div>
 
-<NavDark />
+<!-- <NavDark /> -->
 <MobileMenu />
 <Home {data} />
 
