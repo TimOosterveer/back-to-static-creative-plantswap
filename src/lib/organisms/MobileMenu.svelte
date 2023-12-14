@@ -1,7 +1,7 @@
 <script>
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
-	import mountain from '$lib/assets/mountainscreative.png'
+	import {Stars, Earth, Moon, Mountains} from '$lib/index.js'
 
 	onMount(() => {
 		let menuButton = document.querySelector('.menu-button');
@@ -63,7 +63,7 @@
 				tl.timeScale(1.5).reverse();
 			}
 		});
-		console.log(menuButton)
+		console.log(menuButton);
 
 		const home = document.getElementById('home');
 	});
@@ -78,24 +78,10 @@
 		</svg>
 	</button>
 	<div class="menu-wrapper">
-		<!-- <div class="background-image">
-			<img src="https://cdn.dribbble.com/userupload/4959750/file/original-96d0e2eacf9f93da434671fb03f7540d.png?resize=1200x900" alt="">
-		</div> -->
-
-		<div class="space stars1"></div>
-		<div class="space stars2"></div>
-		<div class="space stars3"></div>
-		<div class="earth">
-			<img src="https://hermenegildacode.github.io/theUniverse/img/world.png" alt="" />;
-		</div>
-
-		<div class="moon">
-			<img src="https://hermenegildacode.github.io/theUniverse/img/moon.png" alt="" />
-		</div>
-
-		<div class="mountains">
-			<img src={mountain} alt="">
-		</div>
+		<Stars />
+		<Earth />
+		<Moon />
+		<Mountains />
 
 		<button class="close-button">
 			<svg width="15" height="15" viewBox="0 0 15 15" fill="" xmlns="http://www.w3.org/2000/svg">
@@ -137,7 +123,7 @@
 		/* background-color: darkblue; */
 		/* background-image: url(https://cdn.dribbble.com/userupload/7529706/file/original-7803eb8d07c27a1995de6601b1cb71e0.png?resize=1200x900);
 		background-size: cover; */
-		/* padding: 1.1em; */
+		padding: 1.1em;
 		background: radial-gradient(circle at bottom, navy 0, black 100%);
 		overflow: hidden;
 		z-index: 1000;
@@ -146,94 +132,6 @@
 		transform: translateY(-3em);
 		z-index: 999999;
 	}
-
-	.space {
-		background: rgba(128, 0, 128, 0.1) center / 200px 200px round;
-		bottom: 0;
-		left: 0;
-		position: absolute;
-		right: 0;
-		top: 0;
-		z-index: -2;
-	}
-
-	.stars1 {
-		animation: space 18s ease-in-out infinite;
-		background-image: radial-gradient(1px 1px at 25px 5px, white, rgba(255, 255, 255, 0)),
-			radial-gradient(1px 1px at 50px 25px, white, rgba(255, 255, 255, 0)),
-			radial-gradient(1px 1px at 125px 20px, white, rgba(255, 255, 255, 0)),
-			radial-gradient(1.5px 1.5px at 50px 75px, white, rgba(255, 255, 255, 0)),
-			radial-gradient(2px 2px at 15px 125px, white, rgba(255, 255, 255, 0)),
-			radial-gradient(2.5px 2.5px at 110px 80px, white, rgba(255, 255, 255, 0));
-	}
-
-	.stars2 {
-		animation: space 24s ease-in-out infinite;
-		background-image: radial-gradient(1px 1px at 75px 125px, white, rgba(255, 255, 255, 0)),
-			radial-gradient(1px 1px at 100px 75px, white, rgba(255, 255, 255, 0)),
-			radial-gradient(1.5px 1.5px at 199px 100px, white, rgba(255, 255, 255, 0)),
-			radial-gradient(2px 2px at 20px 50px, white, rgba(255, 255, 255, 0)),
-			radial-gradient(2.5px 2.5px at 100px 5px, white, rgba(255, 255, 255, 0)),
-			radial-gradient(2.5px 2.5px at 5px 5px, white, rgba(255, 255, 255, 0));
-	}
-
-	.stars3 {
-		animation: space 30s ease-in-out infinite;
-		background-image: radial-gradient(1px 1px at 10px 10px, white, rgba(255, 255, 255, 0)),
-			radial-gradient(1px 1px at 150px 150px, white, rgba(255, 255, 255, 0)),
-			radial-gradient(1.5px 1.5px at 60px 170px, white, rgba(255, 255, 255, 0)),
-			radial-gradient(1.5px 1.5px at 175px 180px, white, rgba(255, 255, 255, 0)),
-			radial-gradient(2px 2px at 195px 95px, white, rgba(255, 255, 255, 0)),
-			radial-gradient(2.5px 2.5px at 95px 145px, white, rgba(255, 255, 255, 0));
-	}
-
-	.mountains {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-	}
-	.mountains img {
-		width: 100%;
-	}
-
-	@keyframes space {
-		40% {
-			opacity: 0.75;
-		}
-		50% {
-			opacity: 0.25;
-		}
-		60% {
-			opacity: 0.75;
-		}
-		100% {
-			transform: rotate(360deg);
-		}
-	}
-	/* .background-image {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		padding: 0;
-		z-index: -3;
-	}
-
-	.background-image img {
-		width: 100%;
-		height: 100%;
-	}
-
-	.background-image::after {
-		content: '';
-		background-color: rgba(0, 0, 0, 0.533);
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	} */
-
 	.menu-button {
 		position: fixed;
 		display: none;
@@ -246,37 +144,6 @@
 		transform: scale(1.2);
 		stroke: var(--background-color-light);
 		z-index: 999999;
-	}
-
-	.earth {
-		position: absolute;
-		top: 10rem;
-		left: 40%;
-		z-index: -1;
-		width: 100%;
-		height: 0px;
-	}
-
-	.earth img {
-		object-fit: contain;
-		width: 10%;
-		animation: earth 120s linear infinite;
-	}
-
-	.moon {
-		position: absolute;
-		top: 10rem;
-		left: 30%;
-		z-index: -2;
-		width: 50%;
-		height: 0px;
-		animation: moon 30s linear infinite;
-		transform-origin: 50%;
-	}
-
-	.moon img {
-		object-fit: contain;
-		width: 10%;
 	}
 
 	.close-button {
@@ -301,11 +168,6 @@
 		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 	}
 
-	p {
-		color: var(--background-color);
-		font-size: 1em;
-	}
-
 	a {
 		text-decoration: none;
 		color: white;
@@ -321,9 +183,6 @@
 		pointer-events: none;
 	}
 
-	@media screen and (max-width: 1122px) {
-	}
-
 	@media screen and (max-width: 200000px) {
 		.menu-wrapper {
 			top: 0;
@@ -334,14 +193,10 @@
 		.menu-button {
 			display: block;
 		}
-
-		/* nav {
-			margin-top: 1%;
-		} */
-
 		nav a {
 			margin-top: 3%;
-			font-size: 10vw;
+			font-size: 4.5vw;
+			padding-left: 3%;
 		}
 
 		.menu-button {
@@ -350,32 +205,6 @@
 
 		.close-button {
 			z-index: 2000;
-		}
-	}
-
-	@keyframes earth {
-		0% {
-			rotate: 0deg;
-			scale: 1;
-		}
-
-		50% {
-			rotate: 180deg;
-			scale: 1.8;
-		}
-
-		100% {
-			rotate: 360deg;
-			scale: 1;
-		}
-	}
-
-	@keyframes moon {
-		from {
-			transform: rotate(0deg);
-		}
-		to {
-			transform: rotate(360deg);
 		}
 	}
 </style>

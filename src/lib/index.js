@@ -23,3 +23,12 @@ export { default as TheMaking4 } from '$lib/organisms/TheMaking4.svelte';
 export { default as ContactForm } from '$lib/molecules/ContactForm.svelte';
 export { default as Location } from '$lib/atoms/Location.svelte';
 export { default as ContactInfo } from '$lib/atoms/ContactInfo.svelte';
+
+
+export { default as Stars } from '$lib/atoms/creative/stars.svelte';
+export { default as Earth } from '$lib/atoms/creative/earth.svelte';
+export { default as Moon } from '$lib/atoms/creative/moon.svelte';
+export { default as Mountains  } from '$lib/atoms/creative/mountains.svelte';
+
+
+
