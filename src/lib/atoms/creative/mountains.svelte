@@ -15,5 +15,6 @@
 	}
 	.mountains img {
 		width: 100%;
+		height: 40rem;
 	}
 </style>
